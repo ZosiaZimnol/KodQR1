@@ -187,21 +187,22 @@
         }
 
         // Funkcja generująca konfetti
-        function generateConfetti() {
-            for (let i = 0; i < 200; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.backgroundColor = getRandomColor();
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.top = Math.random() * -100 + 'px';
-                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-                document.body.appendChild(confetti);
+       function generateConfetti() {
+    for (let i = 0; i < 50; i++) { // Zmniejszono ilość konfetti z 200 do 50
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.backgroundColor = getRandomColor();
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = Math.random() * -100 + 'px';
+        confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+        document.body.appendChild(confetti);
 
-                confetti.addEventListener('animationend', () => {
-                    confetti.remove();
-                });
-            }
-        }
+        confetti.addEventListener('animationend', () => {
+            confetti.remove();
+        });
+    }
+}
+
 
         // Funkcja generująca losowe kolory
         function getRandomColor() {
